@@ -1,0 +1,17 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/validate.py
+      - run: python3 skills/experiment-receipts/scripts/sample_size.py --baseline 0.40 --mde 0.15 | grep -q "per arm: 173"
+      - run: bash -n install.sh
