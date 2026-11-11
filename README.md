@@ -1,5 +1,7 @@
 # Receipts: evidence-first PM skills for AI agents
 
+![Before: "CrediClip analyzed 780 videos with 97% reliability." After: "In one 780-link YouTube batch, every job completed, but 759 of 780 results were flagged as low evidence."](assets/receipts-hero.png)
+
 **Make product claims show their receipts.**
 
 Six agent skills for Claude Code, Codex, and Cursor that make PRDs, metrics, experiment readouts, AI evaluations, and launch copy say where each claim comes from and what each number does not prove.
@@ -19,7 +21,13 @@ AI agents are fast at writing product docs. They are also fast at writing "97% r
 
 ## Install
 
-Clone, then copy the skills into your agent's skills folder:
+One command, any agent:
+
+```bash
+npx skills add aliraza2025/receipts
+```
+
+Or clone and copy into your agent's skills folder:
 
 ```bash
 git clone https://github.com/aliraza2025/receipts.git
@@ -30,7 +38,9 @@ cd receipts
 ./install.sh all
 ```
 
-Or install into one project only: `./install.sh cursor --project path/to/repo` (writes to `.cursor/skills/`, `.claude/skills/`, or `.agents/skills/` for Codex).
+Project-only install: `./install.sh cursor --project path/to/repo` (writes to `.cursor/skills/`, `.claude/skills/`, or `.agents/skills/` for Codex).
+
+Install is tested for all three agents. How and when each agent picks up a skill on its own varies, so naming the skill in your request is the most reliable trigger.
 
 Then ask your agent things like:
 
@@ -47,6 +57,8 @@ Then ask your agent things like:
 
 The second sentence is less flattering and far more useful. It tells a reader, a hiring manager, or your own team exactly what the system did and where it still falls short.
 
+Before launch, an agent ran `claim-receipts` on this README. It checked 8 claims and caught one that overstated: [see the full output](examples/claim-receipts-on-this-readme.md).
+
 ## Where these come from
 
 I'm [Ali Raza](https://alirazaai.page/), a Bay Area product manager and AI builder. Each skill is the written-down version of a method I used on real work:
@@ -54,7 +66,7 @@ I'm [Ali Raza](https://alirazaai.page/), a Bay Area product manager and AI build
 - **ai-eval-receipts and metric-receipts** come from [CrediClip](https://alirazaai.page/crediclip), an AI credibility product for short-form video. A 100-video readiness benchmark showed a working queue but missing evidence, which moved the roadmap to ingestion. More in [What 780 completed video jobs taught me about AI product quality](https://alirazaai.page/notes/crediclip-ai-product-quality).
 - **experiment-receipts** comes from [Raasta](https://alirazaai.page/notes/raasta-product-experiment), an intake experiment with a planning-only sample size, guardrails, and a narrow event contract.
 - **prd-receipts** comes from gathering requirements with an owner and office staff for a [quoting tool built on 11,000+ service jobs](https://alirazaai.page/notes/estimator-data-plane).
-- **claim-receipts** is how I run my own portfolio: every claim has an entry on a [Sources page](https://alirazaai.page/sources).
+- **claim-receipts** is how I run my own portfolio: it lists the primary sources behind what it says about my work on a [Sources page](https://alirazaai.page/sources), and asks readers to report anything unbacked.
 
 ## How this differs from big PM skill libraries
 

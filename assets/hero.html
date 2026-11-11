@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Receipts hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background:
+      radial-gradient(700px 380px at 85% -10%, rgba(255,45,141,.22), transparent 60%),
+      radial-gradient(600px 400px at -5% 110%, rgba(120,80,255,.16), transparent 60%),
+      linear-gradient(180deg, #0b0720, #120a2b);
+    color: #cbd5e1;
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+  }
+  .top { display: flex; align-items: baseline; justify-content: space-between; }
+  .brand { font-size: 46px; font-weight: 800; letter-spacing: -0.04em; color: #f1f5f9; }
+  .brand span { color: #ff2d8d; }
+  .tag { font-size: 22px; font-weight: 600; color: #94a3b8; }
+  .sub { margin-top: 8px; font-size: 25px; color: #e5e7eb; font-weight: 600; letter-spacing: -0.01em; }
+  .rows { margin-top: 36px; display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .row {
+    border-radius: 18px;
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+  .before { background: rgba(239,68,68,.07); border: 1.5px solid rgba(239,68,68,.35); }
+  .after  { background: rgba(255,45,141,.08); border: 1.5px solid rgba(255,45,141,.5); }
+  .label { font-size: 15px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .before .label { color: #f87171; }
+  .after .label { color: #ff4aa3; }
+  .text { font-size: 26px; line-height: 1.35; color: #f1f5f9; font-weight: 500; }
+  .before .text { color: #cbd5e1; text-decoration: line-through; text-decoration-color: rgba(248,113,113,.7); text-decoration-thickness: 2px; }
+  .chip {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+  .before .chip { background: rgba(239,68,68,.15); color: #fca5a5; }
+  .after .chip { background: rgba(255,45,141,.15); color: #ff9cc9; }
+  .bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+  .cmd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 21px;
+    color: #f1f5f9;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 12px 18px;
+  }
+  .cmd span { color: #ff4aa3; }
+  .agents { font-size: 19px; color: #94a3b8; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">receipts<span>.</span></div>
+    <div class="tag">evidence-first PM skills for AI agents</div>
+  </div>
+  <div class="sub">Make product claims show their receipts.</div>
+
+  <div class="rows">
+    <div class="row before">
+      <div class="label">Before</div>
+      <div>
+        <div class="text">“CrediClip analyzed 780 videos with 97% reliability.”</div>
+        <div class="chip">claim-receipts: no source says 97%</div>
+      </div>
+    </div>
+    <div class="row after">
+      <div class="label">After</div>
+      <div>
+        <div class="text">“In one 780-link YouTube batch, every job completed, but 759 of 780 results were flagged as low evidence.”</div>
+        <div class="chip">MEASURED-WITH-SCOPE · source: batch summary</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="cmd"><span>$</span> npx skills add aliraza2025/receipts</div>
+    <div class="agents">Claude Code · Codex · Cursor · MIT</div>
+  </div>
+</body>
+</html>
