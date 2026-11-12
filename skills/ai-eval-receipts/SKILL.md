@@ -18,7 +18,8 @@ An AI feature is ready when you can show, with receipts, that it runs, that it h
 4. **Set readiness gates** with thresholds chosen now, before results. Use the gate table below.
 5. **Design abstention.** Define when the feature must say it is not sure, what it shows instead, and how the UI makes thin evidence visible.
 6. **Plan the eval set.** Size, sampling (balanced, seeded), source, label process, and separation between calibration data and test data.
-7. **Write limitations** that will ship with the feature, in user-facing words.
+7. **Pin versions.** Give the input list, the labeling rubric or judging criteria, the prompts, the model, and the gate thresholds each a version or date, and record them in the readout. A rerun on the same batch is only a before/after comparison if those versions match, or if the readout says what changed.
+8. **Write limitations** that will ship with the feature, in user-facing words.
 
 ## Gate table template
 
@@ -52,4 +53,6 @@ Decision: stop tuning score weights and move roadmap effort to ingestion (browse
 
 - Never report agreement from the same data used to tune prompts or weights.
 - Never describe curated demo examples as evaluation results.
+- Never drop insufficient-evidence results from the denominator to make agreement look better. Report them as their own row.
+- Never present a rerun as an improvement when the input list, criteria, or thresholds changed between runs without saying so.
 - If the agreement question has not been tested, the readiness summary must say "not yet evaluated", even if every other gate passes.
